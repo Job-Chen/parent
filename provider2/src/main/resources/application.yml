@@ -1,0 +1,24 @@
+server:
+  port: 8082
+
+#服务注册中心配置
+eureka:
+  client:
+    serviceUrl:
+      #这个地址填的是注册中心eureka-server的地址
+      defaultZone: http://localhost:8083/eureka/
+    healthcheck:
+      enabled: true
+
+
+spring :
+  application:
+    name: provider
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/datauser?useUnicode=true&characterEncoding=UTF-8&useSSL=true
+    driver-class-name: com.mysql.jdbc.Driver
+    hikari:
+      connection-timeout: 6000
+      maximum-pool-size: 5
